@@ -1,0 +1,44 @@
+docker --version 
+--> This shows the version of docker
+
+docker ps
+--> This command shows us a list of all the running containers.
+
+docker ps -a
+--> Shows all the containers, stopped or running
+
+docker ps -l
+--> Shows all the latest containers.
+
+docker ps -q
+--> Shows only the ID of the containers
+
+docker pull
+--> This command allows you to pull any image which is present in docker or DockerHub,
+    by default,it pulls the latest image,but you can mention the version of image.
+
+docker stop <container_id>
+--> This command is used to stop a container if it has crashed or you want to another one.
+
+docker start <container_id>
+--> This command is used to start a container again,you can use this command.
+
+docker rm
+--> To delete a container. By default when a container is created, it gets an ID  
+    as well as imaginary name such as thirsty kuch. You can mention container name or ID.
+
+docker rmi <image ID/image name>
+--> To delete image in docker.You can delete the images which are useless from the docker local 
+    storage so you can free up some space
+
+
+docker images
+--> This command is used to list all the images.
+
+docker exec
+--> This command allows us to run new command in running container
+
+docker exec -d
+--> Running the commands in the background
+
+docker run -d -p <port_host> Container name

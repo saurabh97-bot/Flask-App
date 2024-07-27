@@ -1,0 +1,33 @@
+version: '3' # Specify the version of Docker compose file format
+
+services: # Defines the services (containers) that make up your application
+  web1:
+    build: .
+    ports: # Ports the service port 5005 on host to 5005 on the container
+      - "5005:5005"
+    command: python jinja_temp.py
+    networks:
+      - my-network
+
+  web2:
+    build: .
+    ports:
+      - "5007:5007"
+    command: python connect.py
+    networks:
+      - my-network
+
+  web3:
+    build: .
+    ports:
+      - "5008:5008"
+    volumes:
+      - .:/app
+    command: python mongoapp.py
+    networks:
+      - my-network
+    
+
+networks:
+  my-network:
+    driver: bridge
